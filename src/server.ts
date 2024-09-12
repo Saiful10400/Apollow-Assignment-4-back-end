@@ -4,7 +4,7 @@ import config from "./config"
 
 async function main(){
     try{
-        await mongoose.connect(config.url as string,{dbName:"USS-org"})
+        await mongoose.connect(config.url as string,{dbName:"Apollow-assignment-4"})
         app.listen(config.port,()=>{
             console.log(`this server is running at ${config.port} port.`)
         })
