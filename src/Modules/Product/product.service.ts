@@ -1,5 +1,4 @@
-import httpStatus from "http-status";
-import appError from "../../Errors/appError";
+
 import Tproducts from "./product.interface";
 import { productModel } from "./product.model";
 
@@ -12,7 +11,7 @@ const createOne = async (payload: Tproducts) => {
 };
 
 //2. update one.
-const updateOne=async({id,payload}:{id:string,payload:Partial<Tproducts>})=>{
+const updateOne=async(id:string,payload:Partial<Tproducts>)=>{
     const result=await productModel.findByIdAndUpdate(id,payload,{new:true})
     return result
 }
@@ -36,6 +35,6 @@ const findOne=async(id:string)=>{
     return result
 }
 
-const productsService={createOne,updateOne,deleteOne,findAll}
+const productsService={createOne,updateOne,deleteOne,findAll,findOne}
 
 export default productsService;
