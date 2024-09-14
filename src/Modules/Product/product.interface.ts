@@ -7,6 +7,7 @@ export interface Tproducts{
     rating:number,
     img:string,
     brand:string,
+    isDeleted?:boolean
     
 }
 

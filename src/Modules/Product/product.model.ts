@@ -6,6 +6,7 @@ const productSchema = new Schema<Tproducts>({
   name: {
     type: String,
     required: true,
+    unique:true
   },
   brand: {
     type: String,
@@ -31,6 +32,10 @@ const productSchema = new Schema<Tproducts>({
     type: Number,
     required: true,
   },
+  isDeleted:{
+    type:Boolean,
+    default:false
+  }
 });
 
 
