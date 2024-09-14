@@ -54,8 +54,8 @@ const updateOne = catchAsync(async (req: Request, res: Response) => {
   });
 
   //5. get all.
- const getAll=catchAsync(async (req: Request, res: Response) => {
-    const data = await productsService.findOne((req.query.id) as string);
+ const findAll=catchAsync(async (req: Request, res: Response) => {
+    const data = await productsService.findAll();
   
     return sendResponse(res, {
       statusCode: httpStatus.OK,
@@ -65,6 +65,6 @@ const updateOne = catchAsync(async (req: Request, res: Response) => {
     });
   });
 
-const productController = { createOne,updateOne,deleteOne,findOne,getAll };
+const productController = { createOne,updateOne,deleteOne,findOne,findAll };
 
 export default productController;
