@@ -7,7 +7,7 @@ const productSchemaZod = z.object({
   price: z.number().positive({ message: "Price must be a positive number" }),
   description: z.string().min(1, { message: "Description is required" }),
   quantity: z.number().int().min(0, { message: "Quantity must be a non-negative integer" }),
-  rating: z.number().min(0, { message: "Rating must be between 0 and 5" }).max(5, { message: "Rating must be between 0 and 5" }),
+  rating: z.number()
 });
 
 // Update schema
@@ -18,7 +18,7 @@ const updateProductSchemaZod = z.object({
   price: z.number().positive({ message: "Price must be a positive number" }).optional(),
   description: z.string().min(1, { message: "Description is required" }).optional(),
   quantity: z.number().int().min(0, { message: "Quantity must be a non-negative integer" }).optional(),
-  rating: z.number().min(0, { message: "Rating must be between 0 and 5" }).max(5, { message: "Rating must be between 0 and 5" }).optional(),
+  rating: z.number()
 });
 
 const productValidation={productSchemaZod,updateProductSchemaZod}
