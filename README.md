@@ -28,9 +28,9 @@ To install and run this project, follow these steps:
 1. **Clone the repository:**
 
    ```sh
-   git clone https://github.com/Saiful10400/Apollo-Assignment-2.git
+   git clone https://github.com/Saiful10400/Apollow-Assignment-4-back-end
 
-   cd Apollo-Assignment-2
+   cd Apollow-Assignment-4-back-end
    
 
 2. **Install dependencies:**
