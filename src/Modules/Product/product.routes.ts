@@ -19,7 +19,7 @@ router.get("/:id",productController.findOne)
 router.get("/",productController.findAll)
 
 // 5. delete a product
-router.delete("/signup",productController.deleteOne)
+router.delete("/:id",productController.deleteOne)
 
 
 

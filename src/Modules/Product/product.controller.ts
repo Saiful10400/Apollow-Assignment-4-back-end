@@ -19,7 +19,7 @@ const createOne = catchAsync(async (req: Request, res: Response) => {
 //2. udpate one.
 
 const updateOne = catchAsync(async (req: Request, res: Response) => {
-    const data = await productsService.updateOne((req.query.id) as string,req.body);
+    const data = await productsService.updateOne((req.params.id) as string,req.body);
   
     return sendResponse(res, {
       statusCode: httpStatus.OK,
@@ -31,7 +31,7 @@ const updateOne = catchAsync(async (req: Request, res: Response) => {
 
   //3. delete one.
   const deleteOne=catchAsync(async (req: Request, res: Response) => {
-    const data = await productsService.deleteOne((req.query.id) as string);
+    const data = await productsService.deleteOne((req.params.id) as string);
   
     return sendResponse(res, {
       statusCode: httpStatus.OK,
@@ -43,7 +43,7 @@ const updateOne = catchAsync(async (req: Request, res: Response) => {
 
   //4. get one.
  const findOne=catchAsync(async (req: Request, res: Response) => {
-    const data = await productsService.findOne((req.query.id) as string);
+    const data = await productsService.findOne((req.params.id) as string);
   
     return sendResponse(res, {
       statusCode: httpStatus.OK,

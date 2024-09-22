@@ -4,7 +4,7 @@ import { productModel } from "./product.model";
 
 
 
-// 1. signup.
+// 1. create one.
 const createOne = async (payload: Tproducts) => {
   const result=await productModel.create(payload)
   return result
@@ -12,6 +12,7 @@ const createOne = async (payload: Tproducts) => {
 
 //2. update one.
 const updateOne=async(id:string,payload:Partial<Tproducts>)=>{
+   
     const result=await productModel.findByIdAndUpdate(id,payload,{new:true})
     return result
 }
@@ -24,7 +25,7 @@ const deleteOne=async(id:string)=>{
 
 // 4. find all.
 const findAll=async()=>{
-    const result= await productModel.find()
+    const result= await productModel.find({isDeleted:false}).select("-isDeleted")
     return result
 
 }
